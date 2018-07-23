@@ -7,7 +7,7 @@
 
 #### Note
 
-This is a [fork of the amazing book](https://addyosmani.com/resources/essentialjsdesignpatterns/book/) by [Addy Osmani](https://addyosmani.com/), updated for ES6.
+This is a [fork of the amazing book](https://addyosmani.com/resources/essentialjsdesignpatterns/book/) by [Addy Osmani](https://addyosmani.com/), updated for ES6. All code snippets have been made to conform to an inconsequentially modified version of the [Airbnb JavaScript styleguide](https://github.com/airbnb/javascript).
 
 <img src="https://raw.github.com/addyosmani/essential-js-design-patterns/master/cover/cover.jpg" width="350px"/>
 
