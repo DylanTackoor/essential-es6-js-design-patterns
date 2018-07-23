@@ -3,13 +3,17 @@
 
 
 
-# Learning JavaScript Design Patterns
+# Learning JavaScript ES6 Design Patterns
+
+#### Note
+
+This is a [fork of the amazing book](https://addyosmani.com/resources/essentialjsdesignpatterns/book/) by [Addy Osmani](https://addyosmani.com/), updated for ES6.
 
 <img src="https://raw.github.com/addyosmani/essential-js-design-patterns/master/cover/cover.jpg" width="350px"/>
 
 This is the source code for Learning JavaScript Design Patterns. It is licensed under the Creative Commons Attribution-Non Commercial-Share Alike 3.0 license. I hope you enjoy it, I hope it helps you learn, and I hope you'll support O'Reilly and me by purchasing a print copy of the book at [O'Reilly.com](http://shop.oreilly.com/product/0636920025832.do).
 
-Design patterns are reusable solutions to commonly occurring problems in software development and are a very useful tool to have at your disposal. You can read the latest version [online](http://addyosmani.com/resources/essentialjsdesignpatterns/book/) for free at any time. 
+Design patterns are reusable solutions to commonly occurring problems in software development and are a very useful tool to have at your disposal. You can read the latest version [online](http://addyosmani.com/resources/essentialjsdesignpatterns/book/) for free at any time.
 
 #### Why is this book needed?
 
@@ -46,7 +50,7 @@ So far, we've successfully had the book translated to Japanese. You can find tha
 
 ### License
 
-This book is released under a Creative Commons Attribution-Noncommercial- No Derivative Works 3.0 United States License. 
+This book is released under a Creative Commons Attribution-Noncommercial- No Derivative Works 3.0 United States License.
 
 What this means it that the project is free to read and use, but the license does not permit commercial use of the material (i.e you can freely print out the book for your own use, but you can't sell it). I'm trying to best to publish all of my books in a free + purchased (if you would like to support these projects) form so I would greatly appreciate it if you would respect these terms.
 
