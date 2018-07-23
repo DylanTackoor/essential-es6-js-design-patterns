@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         yeoman: {
             // Configurable paths
             app: 'book',
-            dist: 'dist'
+            docs: 'docs'
         },
 
         // Watches files for changes and runs tasks based on the changed files
@@ -86,10 +86,10 @@ module.exports = function (grunt) {
                     ]
                 }
             },
-            dist: {
+            docs: {
                 options: {
                     open: true,
-                    base: '<%= yeoman.dist %>',
+                    base: '<%= yeoman.docs %>',
                     livereload: false
                 }
             }
@@ -97,13 +97,13 @@ module.exports = function (grunt) {
 
         // Empties folders to start fresh
         clean: {
-            dist: {
+            docs: {
                 files: [{
                     dot: true,
                     src: [
                         '.tmp',
-                        '<%= yeoman.dist %>/*',
-                        '!<%= yeoman.dist %>/.git*'
+                        '<%= yeoman.docs %>/*',
+                        '!<%= yeoman.docs %>/.git*'
                     ]
                 }]
             },
@@ -153,9 +153,9 @@ module.exports = function (grunt) {
                 relativeAssets: false,
                 assetCacheBuster: false
             },
-            dist: {
+            docs: {
                 options: {
-                    generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+                    generatedImagesDir: '<%= yeoman.docs %>/images/generated'
                 }
             },
             server: {
@@ -170,7 +170,7 @@ module.exports = function (grunt) {
             options: {
                 browsers: ['last 1 version']
             },
-            dist: {
+            docs: {
                 files: [{
                     expand: true,
                     cwd: '.tmp/styles/',
@@ -190,13 +190,13 @@ module.exports = function (grunt) {
 
         // Renames files for browser caching purposes
         rev: {
-            dist: {
+            docs: {
                 files: {
                     src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
-                        '<%= yeoman.dist %>/styles/fonts/{,*/}*.*'
+                        '<%= yeoman.docs %>/scripts/{,*/}*.js',
+                        '<%= yeoman.docs %>/styles/{,*/}*.css',
+                        '<%= yeoman.docs %>/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
+                        '<%= yeoman.docs %>/styles/fonts/{,*/}*.*'
                     ]
                 }
             }
@@ -207,7 +207,7 @@ module.exports = function (grunt) {
         // additional tasks can operate on them
         useminPrepare: {
             options: {
-                dest: '<%= yeoman.dist %>'
+                dest: '<%= yeoman.docs %>'
             },
             html: '<%= yeoman.app %>/index.html'
         },
@@ -215,35 +215,35 @@ module.exports = function (grunt) {
         // Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
             options: {
-                assetsDirs: ['<%= yeoman.dist %>']
+                assetsDirs: ['<%= yeoman.docs %>']
             },
-            html: ['<%= yeoman.dist %>/{,*/}*.html'],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
+            html: ['<%= yeoman.docs %>/{,*/}*.html'],
+            css: ['<%= yeoman.docs %>/styles/{,*/}*.css']
         },
 
-        // The following *-min tasks produce minified files in the dist folder
+        // The following *-min tasks produce minified files in the docs folder
         imagemin: {
-            dist: {
+            docs: {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
                     src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%= yeoman.dist %>/images'
+                    dest: '<%= yeoman.docs %>/images'
                 }]
             }
         },
         svgmin: {
-            dist: {
+            docs: {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
                     src: '{,*/}*.svg',
-                    dest: '<%= yeoman.dist %>/images'
+                    dest: '<%= yeoman.docs %>/images'
                 }]
             }
         },
         htmlmin: {
-            dist: {
+            docs: {
                 options: {
                     collapseBooleanAttributes: true,
                     collapseWhitespace: true,
@@ -256,9 +256,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.dist %>',
+                    cwd: '<%= yeoman.docs %>',
                     src: '{,*/}*.html',
-                    dest: '<%= yeoman.dist %>'
+                    dest: '<%= yeoman.docs %>'
                 }]
             }
         },
@@ -267,9 +267,9 @@ module.exports = function (grunt) {
         // minification. These next options are pre-configured if you do not wish
         // to use the Usemin blocks.
         // cssmin: {
-        //     dist: {
+        //     docs: {
         //         files: {
-        //             '<%= yeoman.dist %>/styles/main.css': [
+        //             '<%= yeoman.docs %>/styles/main.css': [
         //                 '.tmp/styles/{,*/}*.css',
         //                 '<%= yeoman.app %>/styles/{,*/}*.css'
         //             ]
@@ -277,26 +277,26 @@ module.exports = function (grunt) {
         //     }
         // },
         // uglify: {
-        //     dist: {
+        //     docs: {
         //         files: {
-        //             '<%= yeoman.dist %>/scripts/scripts.js': [
-        //                 '<%= yeoman.dist %>/scripts/scripts.js'
+        //             '<%= yeoman.docs %>/scripts/scripts.js': [
+        //                 '<%= yeoman.docs %>/scripts/scripts.js'
         //             ]
         //         }
         //     }
         // },
         // concat: {
-        //     dist: {}
+        //     docs: {}
         // },
 
         // Copies remaining files to places other tasks can use
         copy: {
-            dist: {
+            docs: {
                 files: [{
                     expand: true,
                     dot: true,
                     cwd: '<%= yeoman.app %>',
-                    dest: '<%= yeoman.dist %>',
+                    dest: '<%= yeoman.docs %>',
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
@@ -326,7 +326,7 @@ module.exports = function (grunt) {
             test: [
                 'copy:styles'
             ],
-            dist: [
+            docs: [
                 'copy:styles',
                 'imagemin',
                 'svgmin'
@@ -336,8 +336,8 @@ module.exports = function (grunt) {
 
 
     grunt.registerTask('serve', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
+        if (target === 'docs') {
+            return grunt.task.run(['build', 'connect:docs:keepalive']);
         }
 
         grunt.task.run([
@@ -356,14 +356,14 @@ module.exports = function (grunt) {
 
 
     grunt.registerTask('build', [
-        'clean:dist',
+        'clean:docs',
         'useminPrepare',
-        'concurrent:dist',
+        'concurrent:docs',
         'autoprefixer',
         'concat',
         'cssmin',
         'uglify',
-        'copy:dist',
+        'copy:docs',
         //'rev',
         'usemin'
     ]);
