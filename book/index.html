@@ -45,7 +45,7 @@
     <p class="copyright"><em>Learning JavaScript Design Patterns</em> is released under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-Noncommercial-No Derivative Works 3.0</a> unported license. It is available for purchase via <a href="http://shop.oreilly.com/product/0636920025832.do">O'Reilly</a> Media but will remain available for both free online and as a physical (or eBook) purchase for readers wishing to support the project.</p>
 
     <p><a href="https://www.amazon.com/_/dp/1449331815"><img src="../cover/cover.jpg" width="300px" alt="Book cover for Learning JavaScript Design Patterns"></a></p>
-    
+
     <p class="copyright">&nbsp;</p>
 
     <a id="reviews" href="http://shop.oreilly.com/product/0636920025832/ReviewSubmit.do?sortby=publicationDate?pageId=0636920025832.IP"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://addyosmani.github.com/backbone-fundamentals/img/helpful.png" alt="Was this helpful? We'd love you to write a review."></a>
@@ -403,6 +403,7 @@ and I've modified it where necessary to suit our discussion in this section of t
 
 <h3>A brief note on classes</h3>
 
+<p><strong>Note:</strong> TODO: write disclaimer disclaimer about actually using ES2015.</p>
 <p><strong>Note:</strong> ES2015 introduced native support for classes to JavaScript, however, they are primarily syntactical sugar over JavaScript's existing prototype-based inheritance model. We will not be covering ES2015 classes in this book, but <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">MDN</a> has an excellent introduction to them. </p>
 
 <p>Keep in mind that there will be patterns in this table that reference the concept of "classes". In ES5, JavaScript is a class-less language, however classes can be simulated using functions.</p>
@@ -410,27 +411,27 @@ and I've modified it where necessary to suit our discussion in this section of t
 <p>The most common approach to achieving this is by defining a JavaScript function where we then create an object using the <code>new</code> keyword. <code>this</code> can be used to help define new properties and methods for the object as follows:</p>
 
 <pre class="brush: js">
-// A car "class"
-function Car( model ) {
+// A car class
+class Car {
+  constructor(model, color, year) {
+    this.model = model;
+    this.color = color;
+    this.year = year;
+  }
 
-  this.model = model;
-  this.color = "silver";
-  this.year = "2012";
-
-  this.getInfo = function () {
-    return this.model + " " + this.year;
-  };
-
+  get info() {
+    return `${this.model} ${this.year}`;
+  }
 }
 </pre>
 
 <p>We can then instantiate the object using the Car constructor we defined above like this:</p>
 <pre class="brush: js" >
-var myCar = new Car("ford");
+const myCar = new Car('ford');
 
-myCar.year = "2010";
+myCar.year = '2010';
 
-console.log( myCar.getInfo() );
+console.log(myCar.info);
 </pre>
 
 <p>For more ways to define "classes" using JavaScript, see Stoyan Stefanov's useful <a href="http://www.phpied.com/3-ways-to-define-a-javascript-class/">post</a> on them.</p>
